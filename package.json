@@ -45,7 +45,7 @@
     "@stdlib/math-base-assert-is-nanf": "^0.2.2",
     "@stdlib/math-base-assert-is-negative-zerof": "^0.1.3",
     "@stdlib/napi-argv": "^0.2.2",
-    "@stdlib/napi-argv-double": "^0.2.1",
+    "@stdlib/napi-argv-float": "^0.2.2",
     "@stdlib/napi-argv-int64": "^0.2.2",
     "@stdlib/napi-argv-strided-float32array": "^0.2.2",
     "@stdlib/napi-export": "^0.2.2",
