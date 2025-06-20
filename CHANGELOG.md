@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-04-14)
+## Unreleased (2025-06-20)
 
 <section class="features">
 
@@ -44,6 +44,7 @@ This release closes the following issue:
 
 <details>
 
+-   [`5d83a20`](https://github.com/stdlib-js/stdlib/commit/5d83a20bab1fd787ba28f19cb13c20d395398b43) - **style:** remove double empty lines in C files _(by Philipp Burckhardt)_
 -   [`3587230`](https://github.com/stdlib-js/stdlib/commit/3587230f4c2d3a18427b3d7a09b03f56d83d6f6c) - **chore:** address commit comments regarding typo and refactor [(#5263)](https://github.com/stdlib-js/stdlib/pull/5263) _(by Suhaib Ilahi, Philipp Burckhardt)_
 -   [`8357863`](https://github.com/stdlib-js/stdlib/commit/8357863b87da1554b4e249fb03e712dec8a58ee0) - **feat:** add C ndarray API and refactor `blas/ext/base/ssort2ins` [(#5114)](https://github.com/stdlib-js/stdlib/pull/5114) _(by Prashant Kumar Yadav, Muhammad Haris)_
 -   [`2ea848b`](https://github.com/stdlib-js/stdlib/commit/2ea848b62b686e1e9d861f7df25ece23a7d80798) - **style:** update to use tabs for indentation _(by Philipp Burckhardt)_
