@@ -35,38 +35,32 @@ limitations under the License.
 
 > Simultaneously sort two single-precision floating-point strided arrays based on the sort order of the first array using insertion sort.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-ssort2ins
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-ssort2ins = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssort2ins@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var ssort2ins = require( 'path/to/vendor/umd/blas-ext-base-ssort2ins/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssort2ins@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.ssort2ins;
-})();
-</script>
+var ssort2ins = require( '@stdlib/blas-ext-base-ssort2ins' );
 ```
 
 #### ssort2ins( N, order, x, strideX, y, strideY )
@@ -203,14 +197,9 @@ console.log( y );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ssort2ins@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var ssort2ins = require( '@stdlib/blas-ext-base-ssort2ins' );
 
 var x = discreteUniform( 10, -100, 100, {
     'dtype': 'float32'
@@ -225,26 +214,150 @@ console.log( y );
 ssort2ins( x.length, -1.0, x, -1, y, -1 );
 console.log( x );
 console.log( y );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
 
-<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
-<section class="related">
 
 * * *
 
 <!-- C interface documentation. -->
 
+<section class="c">
 
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/blas/ext/base/ssort2ins.h"
+```
+
+#### stdlib_strided_ssort2ins( N, order, \*X, strideX, \*Y, strideY )
+
+Simultaneously sorts two single-precision floating-point strided arrays based on the sort order of the first array using insertion sort.
+
+```c
+float x[] = { 1.0f, -2.0f, 3.0f, -4.0f };
+float y[] = { 0.0f, 1.0f, 2.0f, 3.0f };
+
+stdlib_strided_ssort2ins( 4, 1.0f, x, 1, y, 1 );
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] CBLAS_INT` number of indexed elements.
+-   **order**: `[in] float` sort order. If `order < 0.0`, the input strided array `X` is sorted in **decreasing** order. If `order > 0.0`, the input strided array `X` is sorted in **increasing** order. If `order == 0.0`, the input strided arrays are left unchanged.
+-   **X**: `[inout] float*` first input array.
+-   **strideX**: `[in] CBLAS_INT` stride length for `X`.
+-   **Y**: `[inout] float*` second input array.
+-   **strideY**: `[in] CBLAS_INT` stride length for `Y`.
+
+```c
+stdlib_strided_ssort2ins( const CBLAS_INT N, const float order, float *X, const CBLAS_INT strideX, float *Y, const CBLAS_INT strideY );
+```
+
+<!--lint disable maximum-heading-length-->
+
+#### stdlib_strided_ssort2ins_ndarray( N, order, \*X, strideX, offsetX, \*Y, strideY, offsetY )
+
+<!--lint enable maximum-heading-length-->
+
+Simultaneously sorts two single-precision floating-point strided arrays based on the sort order of the first array using insertion sort and alternative indexing semantics.
+
+```c
+float x[] = { 1.0f, -2.0f, 3.0f, -4.0f };
+float y[] = { 0.0f, 1.0f, 2.0f, 3.0f };
+
+stdlib_strided_ssort2ins_ndarray( 4, 1.0f, x, 1, 0, y, 1, 0 );
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] CBLAS_INT` number of indexed elements.
+-   **order**: `[in] float` sort order. If `order < 0.0`, the input strided array `X` is sorted in **decreasing** order. If `order > 0.0`, the input strided array `X` is sorted in **increasing** order. If `order == 0.0`, the input strided arrays are left unchanged.
+-   **X**: `[inout] float*` first input array.
+-   **strideX**: `[in] CBLAS_INT` stride length for `X`.
+-   **offsetX**: `[in] CBLAS_INT` starting index for `X`.
+-   **Y**: `[inout] float*` second input array.
+-   **strideY**: `[in] CBLAS_INT` stride length for `Y`.
+-   **offsetY**: `[in] CBLAS_INT` starting index for `Y`.
+
+```c
+stdlib_strided_ssort2ins_ndarray( const CBLAS_INT N, const float order, float *X, const CBLAS_INT strideX, const CBLAS_INT offsetX, float *Y, const CBLAS_INT strideY, const CBLAS_INT offsetY );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/blas/ext/base/ssort2ins.h"
+#include <stdio.h>
+
+int main( void ) {
+    // Create strided arrays:
+    float x[] = { 1.0f, -2.0f, 3.0f, -4.0f, 5.0f, -6.0f, 7.0f, -8.0f };
+    float y[] = { 0.0f, 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f };
+
+    // Specify the number of elements:
+    int N = 8;
+
+    // Specify the strides:
+    int strideX = 1;
+    int strideY = 1;
+
+    // Sort the arrays:
+    stdlib_strided_ssort2ins( N, 1.0f, x, strideX, y, strideY );
+
+    // Print the result:
+    for ( int i = 0; i < 8; i++ ) {
+        printf( "x[ %i ] = %f\n", i, x[ i ] );
+        printf( "y[ %i ] = %f\n", i, y[ i ] );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
+
+<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
+
+<section class="related">
 
 ## See Also
 
@@ -328,17 +441,17 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-ssort2ins/main/LICENSE
 
-[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/umd
+[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
 <!-- <related-links> -->
 
-[@stdlib/blas/ext/base/dsort2ins]: https://github.com/stdlib-js/blas-ext-base-dsort2ins/tree/umd
+[@stdlib/blas/ext/base/dsort2ins]: https://github.com/stdlib-js/blas-ext-base-dsort2ins
 
-[@stdlib/blas/ext/base/gsort2ins]: https://github.com/stdlib-js/blas-ext-base-gsort2ins/tree/umd
+[@stdlib/blas/ext/base/gsort2ins]: https://github.com/stdlib-js/blas-ext-base-gsort2ins
 
-[@stdlib/blas/ext/base/ssortins]: https://github.com/stdlib-js/blas-ext-base-ssortins/tree/umd
+[@stdlib/blas/ext/base/ssortins]: https://github.com/stdlib-js/blas-ext-base-ssortins
 
 <!-- </related-links> -->
 
