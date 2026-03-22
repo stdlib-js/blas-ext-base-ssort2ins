@@ -2,6 +2,40 @@
 
 > Package changelog.
 
+<section class="release" id="unreleased">
+
+## Unreleased (2026-03-22)
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`8884d20`](https://github.com/stdlib-js/stdlib/commit/8884d201ffbfa3345c90fffc6dce6a8d0933f8e4) - **bench:** refactor to use string interpolation in `blas/ext/base/ssort2ins` [(#10913)](https://github.com/stdlib-js/stdlib/pull/10913) _(by Partha Das)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 1 person contributed to this release. Thank you to this contributor:
+
+-   Partha Das
+
+</section>
+
+<!-- /.contributors -->
+
+</section>
+
+<!-- /.release -->
+
 <section class="release" id="v0.3.1">
 
 ## 0.3.1 (2026-02-08)
