@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`be0b1f5`](https://github.com/stdlib-js/stdlib/commit/be0b1f501a4af5546f7ff6ee979585e22bdd56a6) - **chore:** clean-up [(#13780)](https://github.com/stdlib-js/stdlib/pull/13780) _(by Philipp Burckhardt, Athan Reines)_
 -   [`1a3f9ed`](https://github.com/stdlib-js/stdlib/commit/1a3f9edaa5dd7978e023dce7adeb29d5c9511880) - **bench:** refactor to use string interpolation in `blas/ext/base` [(#11380)](https://github.com/stdlib-js/stdlib/pull/11380) _(by Karan Anand)_
 -   [`f9d1409`](https://github.com/stdlib-js/stdlib/commit/f9d140985e169d34f4e66bd770dc675ea28588a3) - **docs:** add missing JSDoc comment _(by Athan Reines)_
 -   [`8884d20`](https://github.com/stdlib-js/stdlib/commit/8884d201ffbfa3345c90fffc6dce6a8d0933f8e4) - **bench:** refactor to use string interpolation in `blas/ext/base/ssort2ins` [(#10913)](https://github.com/stdlib-js/stdlib/pull/10913) _(by Partha Das)_
@@ -26,11 +27,12 @@
 
 ### Contributors
 
-A total of 3 people contributed to this release. Thank you to the following contributors:
+A total of 4 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
 -   Karan Anand
 -   Partha Das
+-   Philipp Burckhardt
 
 </section>
 
